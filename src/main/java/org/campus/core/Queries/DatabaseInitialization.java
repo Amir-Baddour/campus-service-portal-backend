@@ -23,9 +23,22 @@ public class DatabaseInitialization {
         );
         """;
 
+    private static final String addInstructorToCourses = """
+        DO $$
+        BEGIN
+            IF NOT EXISTS (
+                SELECT FROM information_schema.columns
+                WHERE table_name='courses' AND column_name='instructor'
+            ) THEN
+                ALTER TABLE "courses" ADD COLUMN instructor varchar(100);
+            END IF;
+        END $$;
+        """;
+
     static final String[] initializationQueue = {
             initializeStudentsTable,
-            initializeCoursesTable
+            initializeCoursesTable,
+            addInstructorToCourses
     };
 
     public static void run() {

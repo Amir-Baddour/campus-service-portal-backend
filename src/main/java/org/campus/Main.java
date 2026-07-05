@@ -1,12 +1,18 @@
 package org.campus;
 
+import org.campus.api.GET;
+import org.campus.api.POST;
+import org.campus.core.Queries.DatabaseInitialization;
+import org.campus.http.CORSFilter;
+
 import static spark.Spark.*;
 
 public class Main {
     public static void main(String[] args) {
         port(Config.PORT);
 
-        CorsFilter.run();   // or enable(), depending on your implementation
+        DatabaseInitialization.run();
+        CORSFilter.enable();
 
         GET.run();
         POST.run();

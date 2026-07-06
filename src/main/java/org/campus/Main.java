@@ -2,6 +2,8 @@ package org.campus;
 
 import org.campus.api.GET;
 import org.campus.api.POST;
+import org.campus.configurations.Config;
+import org.campus.configurations.EnvConfig;
 import org.campus.core.Queries.DatabaseInitialization;
 import org.campus.http.CORSFilter;
 

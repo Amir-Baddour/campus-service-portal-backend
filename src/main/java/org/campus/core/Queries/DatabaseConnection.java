@@ -1,6 +1,6 @@
 package org.campus.core.Queries;
 
-import org.campus.EnvConfig;
+import org.campus.configurations.EnvConfig;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

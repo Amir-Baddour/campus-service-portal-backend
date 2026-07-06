@@ -1,4 +1,4 @@
-package org.campus;
+package org.campus.configurations;
 
 public class EnvConfig {
     public static final String APP_NAME = getEnv("APP_NAME", "Campus Service Portal");

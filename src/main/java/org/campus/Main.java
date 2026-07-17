@@ -4,6 +4,7 @@ import org.campus.api.GET;
 import org.campus.api.POST;
 import org.campus.configurations.Config;
 import org.campus.configurations.EnvConfig;
+import org.campus.core.Queries.DatabaseConnection;
 import org.campus.core.Queries.DatabaseInitialization;
 import org.campus.http.CORSFilter;
 
@@ -13,6 +14,7 @@ public class Main {
     public static void main(String[] args) {
         port(Config.PORT);
 
+        DatabaseConnection.init();
         DatabaseInitialization.run();
         CORSFilter.enable();
 

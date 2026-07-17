@@ -1,0 +1,10 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.campus:campus-service-portal-backend >--------------
+[INFO] Building campus-service-portal-backend 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ campus-service-portal-backend ---
+Database schema verified/initialized.
+Campus Service Portal started on port 8080

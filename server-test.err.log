@@ -1,0 +1,32 @@
+[org.campus.Main.main()] INFO com.zaxxer.hikari.HikariDataSource - CampusServicePortalPool - Starting...
+[org.campus.Main.main()] INFO com.zaxxer.hikari.pool.HikariPool - CampusServicePortalPool - Added connection org.postgresql.jdbc.PgConnection@17ec898f
+[org.campus.Main.main()] INFO com.zaxxer.hikari.HikariDataSource - CampusServicePortalPool - Start completed.
+[Thread-3] INFO org.eclipse.jetty.util.log - Logging initialized @5991ms to org.eclipse.jetty.util.log.Slf4jLog
+[Thread-3] INFO spark.embeddedserver.jetty.EmbeddedJettyServer - == Spark has ignited ...
+[Thread-3] INFO spark.embeddedserver.jetty.EmbeddedJettyServer - >> Listening on 0.0.0.0:8080
+[Thread-3] INFO org.eclipse.jetty.server.Server - jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 21.0.10+-14961533-b1163.108
+[Thread-3] INFO org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+[Thread-3] INFO org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+[Thread-3] INFO org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+[Thread-3] ERROR spark.Spark - ignite failed
+java.io.IOException: Failed to bind to /0.0.0.0:8080
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:349)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:310)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:234)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:73)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:401)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:73)
+	at spark.embeddedserver.jetty.EmbeddedJettyServer.ignite(EmbeddedJettyServer.java:154)
+	at spark.Service.lambda$init$2(Service.java:633)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Unknown Source)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(Unknown Source)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:344)
+	... 9 more
+[Thread-2] INFO com.zaxxer.hikari.HikariDataSource - CampusServicePortalPool - Shutdown initiated...
+[Thread-2] INFO com.zaxxer.hikari.HikariDataSource - CampusServicePortalPool - Shutdown completed.
